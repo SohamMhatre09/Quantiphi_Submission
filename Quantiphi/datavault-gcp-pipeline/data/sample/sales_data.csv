@@ -1,0 +1,11 @@
+sales_id,product_name,quantity,sale_price,sale_date,region
+1,Widget A,10,19.99,2023-10-01,North
+2,Widget B,5,29.99,2023-10-02,South
+3,Widget C,20,9.99,2023-10-03,East
+4,Widget D,15,14.99,2023-10-04,West
+5,Widget E,8,24.99,2023-10-05,North
+6,Widget F,12,34.99,2023-10-06,South
+7,Widget G,7,49.99,2023-10-07,East
+8,Widget H,3,59.99,2023-10-08,West
+9,Widget I,25,39.99,2023-10-09,North
+10,Widget J,18,44.99,2023-10-10,South

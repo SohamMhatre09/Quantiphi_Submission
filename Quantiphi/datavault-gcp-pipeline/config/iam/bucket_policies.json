@@ -1,0 +1,37 @@
+{
+  "bucketPolicies": [
+    {
+      "role": "roles/storage.objectViewer",
+      "members": [
+        "user:example_user@example.com"
+      ],
+      "condition": {
+        "title": "Allow access to specific user",
+        "description": "Grants object viewer access to a specific user.",
+        "expression": "request.time < timestamp('2024-01-01T00:00:00Z')"
+      }
+    },
+    {
+      "role": "roles/storage.objectCreator",
+      "members": [
+        "serviceAccount:your-service-account@example.iam.gserviceaccount.com"
+      ],
+      "condition": {
+        "title": "Allow object creation for service account",
+        "description": "Grants object creator access to the service account.",
+        "expression": "request.time < timestamp('2024-01-01T00:00:00Z')"
+      }
+    },
+    {
+      "role": "roles/storage.objectAdmin",
+      "members": [
+        "group:example_group@example.com"
+      ],
+      "condition": {
+        "title": "Allow object admin access to a specific group",
+        "description": "Grants object admin access to a specific group.",
+        "expression": "request.time < timestamp('2024-01-01T00:00:00Z')"
+      }
+    }
+  ]
+}

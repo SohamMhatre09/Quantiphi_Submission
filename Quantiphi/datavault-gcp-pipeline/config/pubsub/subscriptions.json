@@ -1,0 +1,14 @@
+{
+  "subscriptions": [
+    {
+      "name": "sales-data-subscription",
+      "topic": "sales-data-topic",
+      "ackDeadlineSeconds": 10,
+      "messageRetentionDuration": "604800s",
+      "enableMessageOrdering": false,
+      "labels": {
+        "env": "development"
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "topic": {
+    "name": "sales-data-upload",
+    "labels": {
+      "environment": "development"
+    }
+  }
+}

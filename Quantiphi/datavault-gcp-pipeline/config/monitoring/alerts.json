@@ -1,0 +1,64 @@
+{
+  "alerts": [
+    {
+      "alertId": "failed-dataflow-jobs",
+      "displayName": "Failed Dataflow Jobs",
+      "description": "Alert for failed Dataflow jobs.",
+      "condition": {
+        "filter": "resource.type=\"dataflow.googleapis.com/Job\" AND severity=\"ERROR\"",
+        "comparison": "COMPARISON_UNSPECIFIED",
+        "thresholdValue": 0,
+        "duration": "60s"
+      },
+      "notificationChannels": [
+        "projects/YOUR_PROJECT_ID/notificationChannels/YOUR_NOTIFICATION_CHANNEL_ID"
+      ],
+      "alertStrategy": {
+        "notificationRateLimit": {
+          "period": "60s",
+          "threshold": 5
+        }
+      }
+    },
+    {
+      "alertId": "high-latency-pubsub",
+      "displayName": "High Latency in Pub/Sub Message Processing",
+      "description": "Alert for high latency in Pub/Sub message processing.",
+      "condition": {
+        "filter": "resource.type=\"pubsub.googleapis.com/Subscription\" AND metric.type=\"pubsub.googleapis.com/subscription/ack_message_latency\" AND metric.labels.subscription_id=\"YOUR_SUBSCRIPTION_ID\"",
+        "comparison": "COMPARISON_GT",
+        "thresholdValue": 1000,
+        "duration": "60s"
+      },
+      "notificationChannels": [
+        "projects/YOUR_PROJECT_ID/notificationChannels/YOUR_NOTIFICATION_CHANNEL_ID"
+      ],
+      "alertStrategy": {
+        "notificationRateLimit": {
+          "period": "60s",
+          "threshold": 5
+        }
+      }
+    },
+    {
+      "alertId": "bigquery-query-quota-exceeded",
+      "displayName": "BigQuery Query Quota Exceeded",
+      "description": "Alert for exceeding the allocated BigQuery query quota.",
+      "condition": {
+        "filter": "resource.type=\"bigquery.googleapis.com/Table\" AND metric.type=\"bigquery.googleapis.com/query/bytes_processed\"",
+        "comparison": "COMPARISON_GT",
+        "thresholdValue": 1000000000,
+        "duration": "60s"
+      },
+      "notificationChannels": [
+        "projects/YOUR_PROJECT_ID/notificationChannels/YOUR_NOTIFICATION_CHANNEL_ID"
+      ],
+      "alertStrategy": {
+        "notificationRateLimit": {
+          "period": "60s",
+          "threshold": 5
+        }
+      }
+    }
+  ]
+}
